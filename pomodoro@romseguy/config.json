@@ -1,0 +1,9 @@
+{
+  "timer": {
+    "pomodoro_duration": 1500
+  },
+  "options": {
+    "is_countdown": false,
+    "show_messages": true
+  }
+}
