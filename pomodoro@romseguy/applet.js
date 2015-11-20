@@ -108,6 +108,14 @@ MyApplet.prototype = {
     timerLengthSection.addMenuItem(this._pomodoroTimeSlider)
 
     // handlers
+    Main.keybindingManager.addHotKey('someid', 'F9', Lang.bind(this, function(){
+      this._isRunning = !this._isRunning;
+      this._tick();
+
+      if (this._timerToggle) {
+        this._timerToggle.setToggleState(this._isRunning);
+      }
+    }));
     this._timerToggle.connect('toggled', Lang.bind(this, function(item) {
       this._isRunning = item.state
       this._tick()
